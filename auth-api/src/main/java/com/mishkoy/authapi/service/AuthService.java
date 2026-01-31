@@ -14,11 +14,11 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtils jwtUtils;
 
-    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils) {
-        this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
-        this.jwtUtils = jwtUtils;
-    }
+//    public AuthService(UserRepository userRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils) {
+//        this.userRepository = userRepository;
+//        this.passwordEncoder = passwordEncoder;
+//        this.jwtUtils = jwtUtils;
+//    }
 
     public void register(String email, String password) {
         if (userRepository.findByEmail(email).isPresent()) {
