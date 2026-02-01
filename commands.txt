@@ -3,6 +3,7 @@ psql -U user -d mydb                          # находясь в контей
 \dt                                           # посмотреть все таблицы базы данных
 SELECT * FROM users;                          # посмотреть все записи в таблице users
 \q                                            # отключиться от базы данных
-
+docker-compose up -d --build auth-api         # пересобрать контейнер для сервиса auth-api
+docker-compose up                             # запуск всех контейнеров
 
 

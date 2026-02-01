@@ -12,11 +12,6 @@ import java.util.Map;
 public class AuthController {
     private final AuthService authService;
 
-//    public AuthController(AuthService authService) {
-//        this.authService = authService;
-//    }
-
-
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Map<String, String> request) {
         authService.register(request.get("email"), request.get("password"));

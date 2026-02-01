@@ -14,15 +14,16 @@ public class JwtUtils {
     private String jwtSecret;
 
     private Key getSigningKey() {
-        return Keys.hmacShaKeyFor(jwtSecret.getBytes());
+        byte[] keyBytes = this.jwtSecret.getBytes(java.nio.charset.StandardCharsets.UTF_8);
+        return Keys.hmacShaKeyFor(keyBytes);
     }
 
     public String generateToken(String email) {
         return Jwts.builder()
                 .setSubject(email)
                 .setIssuedAt(new Date())
-                .setExpiration(new Date((new Date()).getTime() + 86400000)) // 24 hours
-                .signWith(getSigningKey(), SignatureAlgorithm.HS256)
+                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // 24hours
+                .signWith(getSigningKey())
                 .compact();
     }
 

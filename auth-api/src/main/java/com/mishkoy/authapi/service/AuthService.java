@@ -37,6 +37,7 @@ public class AuthService {
         if (!passwordEncoder.matches(password, user.getPasswordHash())) {
             throw new RuntimeException("Invalid password");
         }
-        return jwtUtils.generateToken(email);
+        String token = jwtUtils.generateToken(email);
+        return token;
     }
 }
