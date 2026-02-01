@@ -1,0 +1,9 @@
+docker-compose -f docker-compose-db.yml up -d # запуск контейнера только с базой данных
+psql -U user -d mydb                          # находясь в контейнере подключится к базе данных
+\dt                                           # посмотреть все таблицы базы данных
+SELECT * FROM users;                          # посмотреть все записи в таблице users
+\q                                            # отключиться от базы данных
+docker-compose up -d --build auth-api         # пересобрать контейнер для сервиса auth-api
+docker-compose up                             # запуск всех контейнеров
+
+
