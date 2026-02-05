@@ -17,7 +17,7 @@ public class WebController {
     // 1. Главная страница "/"
     @GetMapping("/")
     public String index() {
-        return "index"; // Ищет файл templates/index.html
+        return "web/index"; // Ищет файл templates/index.html
     }
 
     // 2. Страница логина (Заглушка)
@@ -26,13 +26,13 @@ public class WebController {
         if (message != null) {
             model.addAttribute("infoMessage", message);
         }
-        return "login"; // Ищет templates/login.html
+        return "web/login"; // Ищет templates/login.html
     }
 
     // 3. Страница регистрации (Показать форму)
     @GetMapping("/register")
     public String registerPage() {
-        return "register"; // Ищет templates/register.html
+        return "web/register"; // Ищет templates/register.html
     }
 
     // 4. Обработка формы регистрации
@@ -52,7 +52,7 @@ public class WebController {
             }
             // Другая ошибка -> остаемся на странице регистрации и показываем ошибку
             model.addAttribute("error", e.getMessage());
-            return "register";
+            return "web/register";
         }
     }
 }
