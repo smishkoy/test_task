@@ -6,5 +6,5 @@ SELECT * FROM users;                          # посмотреть все за
 docker-compose up -d --build auth-api         # пересобрать контейнер для сервиса auth-api
 docker-compose up                             # запуск всех контейнеров
 docker-compose up -d --build                  # пересобрать все контейнеры и запустить их (-d - отпустить консоль после запуска контейнеров)
-
+docker-compose up --build
 

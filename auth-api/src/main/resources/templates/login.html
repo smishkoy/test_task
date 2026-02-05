@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<h2>Вход в систему</h2>
+
+<div th:if="${infoMessage}" style="color: green; font-weight: bold;">
+    <p th:text="${infoMessage}"></p>
+</div>
+
+<p>Форма логина будет реализована позже...</p>
+
+<a href="/register">Нет аккаунта? Зарегистрироваться</a>
+</body>
+</html>
